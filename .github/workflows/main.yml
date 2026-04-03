@@ -1,0 +1,27 @@
+name: My GitHub Actions Pipeline
+
+# Події, при яких запускається пайплайн
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    # Віртуальна машина, яку виділяє GitHub
+    runs-on: ubuntu-latest
+
+    steps:
+      # Крок 1: Копіювання твого коду на віртуальну машину
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      # Крок 2: Виконання команд (замість <BUILD>)
+      - name: Build code
+        run: |
+          echo "Привіт, Yaroslav! Розпочинаю виконання пайплайну..."
+          echo "Поточна дата та час: $(date)"
+          echo "Перевірка файлів у репозиторії:"
+          ls -R
+          echo "Пайплайн успішно завершено!"
