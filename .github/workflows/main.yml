@@ -20,8 +20,6 @@ jobs:
       # Крок 2: Виконання команд (замість <BUILD>)
       - name: Build code
         run: |
-          echo "Привіт, Yaroslav! Розпочинаю виконання пайплайну..."
-          echo "Поточна дата та час: $(date)"
-          echo "Перевірка файлів у репозиторії:"
+          echo "$(date)"
           ls -R
-          echo "Пайплайн успішно завершено!"
+          echo "Pipeline completed"
